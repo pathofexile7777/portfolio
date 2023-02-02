@@ -40,5 +40,5 @@ pub struct TriangleArbitrageData {
     pub profits: Vec<f64>, 
     pub start_pair_data: DepthStreamWrapper, 
     pub mid_pair_data: DepthStreamWrapper, 
-    pub end_pair_dat: DepthStreamWrapper, 
+    pub end_pair_data: DepthStreamWrapper, 
 }

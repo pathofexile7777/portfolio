@@ -1,0 +1,54 @@
+update_interval: 100
+results_limit: 5
+depth_streams:
+  - btcusdt
+  - btcbusd
+  - btcusdc
+  - ethusdt
+  - ethbusd
+  - ethusdc
+  - bnbusdt
+  - bnbbusd
+  - bnbusdc
+  - aptusdt
+  - aptbusd
+  - aptusdc
+  - xrpusdt
+  - xrpbusd
+  - xrpusdc
+  - solusdt
+  - solbusd
+  - solusdc
+  - ethbtc
+  - bnbbtc
+  - bnbeth
+  - aptbtc
+  - apteth
+  - aptbnb
+  - xrpbtc
+  - xrpeth
+  - xrpbnb
+  - solbtc
+  - soleth
+  - solbnb
+
+# Should add a lot more pairs
+triangles:
+  - parts: [btc, eth, bnb]
+    pairs: [ethbtc, bnbeth, bnbbtc] 
+  - parts: [btc, sol, bnb]
+    pairs: [solbtc, solbnb, bnbbtc]
+  - parts: [btc, xrp, eth]
+    pairs: [xrpbtc, xrpeth, ethbtc]
+  - parts: [busd, xrp, eth]
+    pairs: [xrpbusd, xrpeth, ethbusd]
+  - parts: [busd, xrp, bnb]
+    pairs: [xrpbusd, xrpbnb, bnbbusd]
+  - parts: [usdt, xrp, eth]
+    pairs: [xrpusdt, xrpeth, ethusdt]
+  - parts: [usdt, xrp, bnb]
+    pairs: [xrpusdt, xrpbnb, bnbusdt]
+  - parts: [usdt, sol, btc]
+    pairs: [solusdt, solbtc, btcusdt]
+  - parts: [usdt, sol, bnb]
+    pairs: [solusdt, solbnb, bnbusdt]
