@@ -1,61 +1,81 @@
 '''
-binance spot data payload
-{
-  "e": "kline",     // Event type
-  "E": 123456789,   // Event time
-  "s": "BNBBTC",    // Symbol
-  "k": {
-    "t": 123400000, // Kline start time
-    "T": 123460000, // Kline close time
-    "s": "BNBBTC",  // Symbol
-    "i": "1m",      // Interval
-    "f": 100,       // First trade ID
-    "L": 200,       // Last trade ID
-    "o": "0.0010",  // Open price
-    "c": "0.0020",  // Close price
-    "h": "0.0025",  // High price
-    "l": "0.0015",  // Low price
-    "v": "1000",    // Base asset volume                        total volume of the base asset(e.g. BTC, ETH, etc)
-    "n": 100,       // Number of trades
-    "x": false,     // Is this kline closed?
-    "q": "1.0000",  // Quote asset volume                       total volume of the quote asset(e.g. USD, USDT, etc)
-    "V": "500",     // Taker buy base asset volume              total volume of the base asset bought by takers(market makers)
-    "Q": "0.500",   // Taker buy quote asset volume             total volume of the quote asset bought by takers(market makers)
-    "B": "123456"   // Ignore
-  }
-}
+studying this link
+https://wikidocs.net/120388
 '''
 
-import websocket, json
+import ccxt
 
-symbol = 'btcusdt'
-interval = '1s'
+### check markets in Binance
+binance = ccxt.binance()
+markets = binance.load_markets()
 
-url = f'wss://stream.binance.com:9443/ws/{symbol}@kline_{interval}'
-closes = []
-highs = []
-lows = []
+print(markets.keys())
+print(len(markets))
+print(type(markets))
 
-def on_message(ws, message):
-    data = json.loads(message)
-    print(data)
-    candle = data['k']
-    is_candle_closed = candle['x']
-    close = candle['c']
-    high = candle['h']
-    low = candle['l']
-    vol = candle['v']
 
-    if is_candle_closed:
-        closes.append(float(close))
-        highs.append(float(high))
-        lows.append(float(low))
-        print(closes)
-        print(highs)
-        print(lows)
 
-def on_close(ws):
-    print("close")
 
-ws = websocket.WebSocketApp(url, on_message=on_message, on_close=on_close)
-ws.run_forever()
+
+### check current price
+import pprint
+btc = binance.fetch_ticker("BTC/USDT")
+pprint.pprint(btc)
+
+
+
+
+### check candle
+import pandas as pd
+
+# # default of fetch_ohlcv: 1minute
+# # return value: 2nd dimension list
+# btc_ohlcv = binance.fetch_ohlcv("BTC/USDT")
+
+# df = pd.DataFrame(btc_ohlcv, columns=['datetime', 'open', 'high', 'low', 'close', 'volume'])
+# df['datetime'] = pd.to_datetime(df['datetime'], unit='ms')
+# df.set_index('datetime', inplace=True)
+# print(df)
+
+# # 1day data
+# btc_ohlcv_1d = binance.fetch_ohlcv("BTC/USDT", '1d')
+# df = pd.DataFrame(btc_ohlcv_1d, columns=['datetime', 'open', 'high', 'low', 'close', 'volume'])
+# df['datetime'] = pd.to_datetime(df['datetime'], unit='ms')
+# df.set_index('datetime', inplace=True)
+# print(df)
+
+# specific amount of data
+btc_ohlcv_n = binance.fetch_ohlcv(symbol="BTC/USDT", timeframe='1d', limit=10)
+df = pd.DataFrame(btc_ohlcv_n, columns=['datetime', 'open', 'high', 'low', 'close', 'volume'])
+df['datetime'] = pd.to_datetime(df['datetime'], unit='ms')
+df.set_index('datetime', inplace=True)
+print(df)
+
+
+
+
+### check orderbook
+orderbook = binance.fetch_order_book('ETH/USDT')
+print(orderbook['asks'])
+print(orderbook['bids'])
+
+
+
+
+### check balance(api needed)
+with open('api.txt') as f:
+  lines = f.readlines()
+  api_key = lines[0].strip()
+  secret = lines[1].strip()
+
+binance_ = ccxt.binance(config={
+  'apiKey': api_key, 
+  'secret': secret
+})
+
+balance = binance_.fetch_balance()
+print(balance['USDT'])
+# format in print
+# free: current balance of coin which is not using in trade
+# used: current balance of coin which is using in trade
+# total: free + used
