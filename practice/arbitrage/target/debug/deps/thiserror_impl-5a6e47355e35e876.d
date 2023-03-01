@@ -1,0 +1,12 @@
+c:\Users\pc\Desktop\study\portfolio\arbitrage\target\debug\deps\thiserror_impl-5a6e47355e35e876.dll: C:\Users\pc\.cargo\registry\src\github.com-1ecc6299db9ec823\thiserror-impl-1.0.38\src\lib.rs C:\Users\pc\.cargo\registry\src\github.com-1ecc6299db9ec823\thiserror-impl-1.0.38\src\ast.rs C:\Users\pc\.cargo\registry\src\github.com-1ecc6299db9ec823\thiserror-impl-1.0.38\src\attr.rs C:\Users\pc\.cargo\registry\src\github.com-1ecc6299db9ec823\thiserror-impl-1.0.38\src\expand.rs C:\Users\pc\.cargo\registry\src\github.com-1ecc6299db9ec823\thiserror-impl-1.0.38\src\fmt.rs C:\Users\pc\.cargo\registry\src\github.com-1ecc6299db9ec823\thiserror-impl-1.0.38\src\generics.rs C:\Users\pc\.cargo\registry\src\github.com-1ecc6299db9ec823\thiserror-impl-1.0.38\src\prop.rs C:\Users\pc\.cargo\registry\src\github.com-1ecc6299db9ec823\thiserror-impl-1.0.38\src\valid.rs
+
+c:\Users\pc\Desktop\study\portfolio\arbitrage\target\debug\deps\thiserror_impl-5a6e47355e35e876.d: C:\Users\pc\.cargo\registry\src\github.com-1ecc6299db9ec823\thiserror-impl-1.0.38\src\lib.rs C:\Users\pc\.cargo\registry\src\github.com-1ecc6299db9ec823\thiserror-impl-1.0.38\src\ast.rs C:\Users\pc\.cargo\registry\src\github.com-1ecc6299db9ec823\thiserror-impl-1.0.38\src\attr.rs C:\Users\pc\.cargo\registry\src\github.com-1ecc6299db9ec823\thiserror-impl-1.0.38\src\expand.rs C:\Users\pc\.cargo\registry\src\github.com-1ecc6299db9ec823\thiserror-impl-1.0.38\src\fmt.rs C:\Users\pc\.cargo\registry\src\github.com-1ecc6299db9ec823\thiserror-impl-1.0.38\src\generics.rs C:\Users\pc\.cargo\registry\src\github.com-1ecc6299db9ec823\thiserror-impl-1.0.38\src\prop.rs C:\Users\pc\.cargo\registry\src\github.com-1ecc6299db9ec823\thiserror-impl-1.0.38\src\valid.rs
+
+C:\Users\pc\.cargo\registry\src\github.com-1ecc6299db9ec823\thiserror-impl-1.0.38\src\lib.rs:
+C:\Users\pc\.cargo\registry\src\github.com-1ecc6299db9ec823\thiserror-impl-1.0.38\src\ast.rs:
+C:\Users\pc\.cargo\registry\src\github.com-1ecc6299db9ec823\thiserror-impl-1.0.38\src\attr.rs:
+C:\Users\pc\.cargo\registry\src\github.com-1ecc6299db9ec823\thiserror-impl-1.0.38\src\expand.rs:
+C:\Users\pc\.cargo\registry\src\github.com-1ecc6299db9ec823\thiserror-impl-1.0.38\src\fmt.rs:
+C:\Users\pc\.cargo\registry\src\github.com-1ecc6299db9ec823\thiserror-impl-1.0.38\src\generics.rs:
+C:\Users\pc\.cargo\registry\src\github.com-1ecc6299db9ec823\thiserror-impl-1.0.38\src\prop.rs:
+C:\Users\pc\.cargo\registry\src\github.com-1ecc6299db9ec823\thiserror-impl-1.0.38\src\valid.rs:
